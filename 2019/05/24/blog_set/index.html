@@ -100,7 +100,7 @@
 <meta name="keywords" content="Hexo,NexT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HEXO+NexT博客搭建基础配置">
-<meta property="og:url" content="http://relient.cn/2019/05/24/blog_set/index.html">
+<meta property="og:url" content="root/2019/05/24/blog_set/index.html">
 <meta property="og:site_name" content="Relient">
 <meta property="og:description" content="写在前面 作为一只前端汪，想要做一个博客，来记录一下学习经历，和一些生活中的感触。于是顺理成章地接触到HEXO，然后又顺理成章地接触到了NexT，再顺便开始“像程序员一样写作”地用起了Markdown。 不得不说，前端真是一些爱折腾的人。什么东西都想搞搞，之前先是用着wordpress，感觉太low，还需要后端搭建一个数据库。后来又用Vuepress，但是主题太少了，不想千篇一律。最后看来看去，还">
 <meta property="og:locale" content="zh-Hans">
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://relient.cn/2019/05/24/blog_set/">
+  <link rel="canonical" href="root/2019/05/24/blog_set/">
 
 
 
@@ -358,7 +358,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://relient.cn/2019/05/24/blog_set/">
+    <link itemprop="mainEntityOfPage" href="root/2019/05/24/blog_set/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kid Relient">
@@ -466,7 +466,7 @@
 
       
         <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a><strong>写在前面</strong></h3><p> 作为一只前端汪，想要做一个博客，来记录一下学习经历，和一些生活中的感触。于是顺理成章地接触到HEXO，然后又顺理成章地接触到了NexT，再顺便开始“像程序员一样写作”地用起了Markdown。</p>
-<p>不得不说，前端真是一些爱折腾的人。什么东西都想搞搞，之前先是用着<a href="http://relient.cn/wordpress"><code>wordpress</code></a>，感觉太low，还需要后端搭建一个数据库。后来又用<a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener">Vuepress</a>，但是主题太少了，不想千篇一律。最后看来看去，还是用HEXO吧。</p>
+<p>不得不说，前端真是一些爱折腾的人。什么东西都想搞搞，之前先是用着<a href="http://relient.cn/wordpress" target="_blank" rel="noopener"><code>wordpress</code></a>，感觉太low，还需要后端搭建一个数据库。后来又用<a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener">Vuepress</a>，但是主题太少了，不想千篇一律。最后看来看去，还是用HEXO吧。</p>
 <p>一天后，“HEXO真香！”。<br><a id="more"></a></p>
 <h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a><strong>基本配置</strong></h3><h4 id="1-打开hexo-config-yml"><a href="#1-打开hexo-config-yml" class="headerlink" title="1. 打开hexo/_config.yml"></a><font color>1. 打开hexo/_config.yml</font></h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//基本信息配置</span></span><br><span class="line"><span class="attr">   title:</span> <span class="string">标题</span></span><br><span class="line"><span class="attr">   subtitle:</span> <span class="string">副标题</span></span><br><span class="line"><span class="attr">   description:</span> <span class="string">描述</span></span><br><span class="line"><span class="attr">   author:</span> <span class="string">作者</span></span><br><span class="line"><span class="attr">   language:</span> <span class="string">语言（简体中文是zh-Hans）</span></span><br><span class="line"><span class="attr">   timezone:</span> <span class="string">网站时区（Hexo</span> <span class="string">默认使用您电脑的时区，不用写）</span></span><br></pre></td></tr></table></figure>
 <h4 id="2-打开hexo-theme-next-config-yml"><a href="#2-打开hexo-theme-next-config-yml" class="headerlink" title="2.打开hexo/theme/next/_config.yml"></a>2.打开hexo/theme/next/_config.yml</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  <span class="string">//NavBar设置</span></span><br><span class="line"><span class="attr">  menu:</span></span><br><span class="line"><span class="attr">    home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span>                          <span class="string">//首页</span></span><br><span class="line"><span class="attr">    archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span>          <span class="string">//归档</span></span><br><span class="line"><span class="attr">    categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span>           <span class="string">//分类</span></span><br><span class="line"><span class="attr">    tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span>                     <span class="string">//标签</span></span><br><span class="line"><span class="attr">    about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span>                   <span class="string">//关于</span></span><br><span class="line">    <span class="comment">#schedule: /schedule/ || calendar        //日程表</span></span><br><span class="line"></span><br><span class="line">  <span class="string">//Next主题样式设置</span></span><br><span class="line">  <span class="comment"># Schemes</span></span><br><span class="line">    <span class="comment"># scheme: Muse</span></span><br><span class="line"><span class="attr">    scheme:</span> <span class="string">Mist</span> <span class="string">//把前面的#去掉使用Mist主题</span></span><br><span class="line">    <span class="comment"># scheme: Pisces</span></span><br><span class="line"> <span class="comment"># scheme: Gemini</span></span><br><span class="line"></span><br><span class="line">   <span class="string">//头像设置</span></span><br><span class="line">   <span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/header.jpg</span></span><br></pre></td></tr></table></figure>
