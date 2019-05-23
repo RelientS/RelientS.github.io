@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Relient">
 <meta property="og:description" content="写在前面 作为一只前端汪，想要做一个博客，来记录一下学习经历，和一些生活中的感触。于是顺理成章地接触到HEXO，然后又顺理成章地接触到了NexT，再顺便开始“像程序员一样写作”地用起了Markdown。 不得不说，前端真是一些爱折腾的人。什么东西都想搞搞，之前先是用着wordpress，感觉太low，还需要后端搭建一个数据库。后来又用Vuepress，但是主题太少了，不想千篇一律。最后看来看去，还">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-23T08:14:12.629Z">
+<meta property="og:updated_time" content="2019-05-23T10:52:14.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO+NexT博客搭建基础配置">
 <meta name="twitter:description" content="写在前面 作为一只前端汪，想要做一个博客，来记录一下学习经历，和一些生活中的感触。于是顺理成章地接触到HEXO，然后又顺理成章地接触到了NexT，再顺便开始“像程序员一样写作”地用起了Markdown。 不得不说，前端真是一些爱折腾的人。什么东西都想搞搞，之前先是用着wordpress，感觉太low，还需要后端搭建一个数据库。后来又用Vuepress，但是主题太少了，不想千篇一律。最后看来看去，还">
@@ -309,6 +309,23 @@
     <a href="http://cdn.relient.cn/share" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-music"></i> <br>音乐</a>
 
   </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
 
       
       
@@ -401,7 +418,7 @@
                 
               
 
-              <time title="创建时间：2019-05-23 16:12:00 / 修改时间：08:14:12" itemprop="dateCreated datePublished" datetime="2019-05-23T16:12:00Z">2019-05-23</time>
+              <time title="创建时间：2019-05-23 16:12:00 / 修改时间：10:52:14" itemprop="dateCreated datePublished" datetime="2019-05-23T16:12:00Z">2019-05-23</time>
             
 
             
@@ -449,6 +466,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">undefined</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">NaN:aN</span>
+              
+            </div>
+          
 
           
 
@@ -466,7 +511,7 @@
 
       
         <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a><strong>写在前面</strong></h3><p> 作为一只前端汪，想要做一个博客，来记录一下学习经历，和一些生活中的感触。于是顺理成章地接触到HEXO，然后又顺理成章地接触到了NexT，再顺便开始“像程序员一样写作”地用起了Markdown。</p>
-<p>不得不说，前端真是一些爱折腾的人。什么东西都想搞搞，之前先是用着<a href="http://relient.cn/wordpress"><code>wordpress</code></a>，感觉太low，还需要后端搭建一个数据库。后来又用<a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener">Vuepress</a>，但是主题太少了，不想千篇一律。最后看来看去，还是用HEXO吧。</p>
+<p>不得不说，前端真是一些爱折腾的人。什么东西都想搞搞，之前先是用着<a href="http://relient.cn/wordpress"><code>wordpress</code></a>，感觉太low，还需要后端搭建一个数据库。后来又用<a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener"><code>Vuepress</code></a>，但是主题太少了，不想千篇一律。最后看来看去，还是用<code>HEXO</code>吧。</p>
 <p>一天后，“HEXO真香！”。<br><a id="more"></a></p>
 <h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a><strong>基本配置</strong></h3><h4 id="1-打开hexo-config-yml"><a href="#1-打开hexo-config-yml" class="headerlink" title="1. 打开hexo/_config.yml"></a><font color>1. 打开hexo/_config.yml</font></h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//基本信息配置</span></span><br><span class="line"><span class="attr">   title:</span> <span class="string">标题</span></span><br><span class="line"><span class="attr">   subtitle:</span> <span class="string">副标题</span></span><br><span class="line"><span class="attr">   description:</span> <span class="string">描述</span></span><br><span class="line"><span class="attr">   author:</span> <span class="string">作者</span></span><br><span class="line"><span class="attr">   language:</span> <span class="string">语言（简体中文是zh-Hans）</span></span><br><span class="line"><span class="attr">   timezone:</span> <span class="string">网站时区（Hexo</span> <span class="string">默认使用您电脑的时区，不用写）</span></span><br></pre></td></tr></table></figure>
 <h4 id="2-打开hexo-theme-next-config-yml"><a href="#2-打开hexo-theme-next-config-yml" class="headerlink" title="2.打开hexo/theme/next/_config.yml"></a>2.打开hexo/theme/next/_config.yml</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  <span class="string">//NavBar设置</span></span><br><span class="line"><span class="attr">  menu:</span></span><br><span class="line"><span class="attr">    home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span>                          <span class="string">//首页</span></span><br><span class="line"><span class="attr">    archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span>          <span class="string">//归档</span></span><br><span class="line"><span class="attr">    categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span>           <span class="string">//分类</span></span><br><span class="line"><span class="attr">    tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span>                     <span class="string">//标签</span></span><br><span class="line"><span class="attr">    about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span>                   <span class="string">//关于</span></span><br><span class="line">    <span class="comment">#schedule: /schedule/ || calendar        //日程表</span></span><br><span class="line"></span><br><span class="line">  <span class="string">//Next主题样式设置</span></span><br><span class="line">  <span class="comment"># Schemes</span></span><br><span class="line">    <span class="comment"># scheme: Muse</span></span><br><span class="line"><span class="attr">    scheme:</span> <span class="string">Mist</span> <span class="string">//把前面的#去掉使用Mist主题</span></span><br><span class="line">    <span class="comment"># scheme: Pisces</span></span><br><span class="line"> <span class="comment"># scheme: Gemini</span></span><br><span class="line"></span><br><span class="line">   <span class="string">//头像设置</span></span><br><span class="line">   <span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/header.jpg</span></span><br></pre></td></tr></table></figure>
@@ -478,8 +523,9 @@
 </blockquote>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//hexo/theme/next/_config.yml</span></span><br><span class="line"><span class="attr">  small:</span> <span class="string">/images/xxx.png</span></span><br><span class="line"><span class="attr">  medium:</span> <span class="string">/images/xxx.png</span></span><br><span class="line"><span class="attr">  apple_touch_icon:</span> <span class="string">/images/xxx.png</span></span><br><span class="line"><span class="attr">  safari_pinned_tab:</span> <span class="string">/images/xxx.png</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="添加自定义样式"><a href="#添加自定义样式" class="headerlink" title="添加自定义样式"></a><strong>添加自定义样式</strong></h3><p>爱折腾的前端同志，肯定不会甘于只用NexT自带的模板，能改就改，不自己写点css还叫前端大哥吗<br>？</p>
-<p>那么方法来了：<code>themes/next/source/css/_custom/custom.styl</code></p>
+<h3 id="添加自定义样式"><a href="#添加自定义样式" class="headerlink" title="添加自定义样式"></a><strong>添加自定义样式</strong></h3><p>爱折腾的前端同志，肯定不会甘于只用NexT自带的模板，能改就改，不自己写点css还叫前端大哥吗？</p>
+<p>那么方法来了：</p>
+<p><code>themes/next/source/css/_custom/custom.styl</code></p>
 <p>请看这个文件，诶嘿，空的！怎么搞搞呢，其实直接写css就完事了。例如改变一下引用块：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">blockquote</span> &#123;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">4px</span> solid <span class="number">#42b983</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span> <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#777</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(66,185,131,0.1);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span>, <span class="selector-tag">blockquote</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">dl</span>, <span class="selector-tag">table</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0.8em</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>一把梭，完事。</p>
 <hr>
@@ -525,6 +571,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/25/Lost-In-Boston/" rel="next" title="Lost In Boston">
+                <i class="fa fa-chevron-left"></i> Lost In Boston
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
@@ -592,7 +654,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -613,7 +675,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -634,7 +700,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -770,8 +840,23 @@
   <span class="author" itemprop="copyrightHolder">Kid Relient</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">NaNm</span>
+  
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">NaN:aN</span>
+  
+
 </div>
 
 
@@ -834,7 +919,7 @@
     
     
   
-  <script color="53,53,53" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script color="53,53,53" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
 
 
 
