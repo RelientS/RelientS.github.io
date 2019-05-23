@@ -1768,7 +1768,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff5e0a;
+  background: #36a401;
 }
 .feed-link,
 .chat {
@@ -2725,4 +2725,8 @@ ol,
 dl,
 table {
   margin: 0.8em 0;
+}
+a:hover {
+  color: #ffa500;
+  transition: color 1s;
 }
