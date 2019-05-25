@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/fav32.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/fav16.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="最近在公司摸鱼久了，基本上什么前端的东西都接触了一遍。 从原生js开始，到可视化的WebGL、D3、THREE；再到全能的node.js，接触了Express和Koa2，把路由勉强搞清楚；又看了看了工具库Lodash和搭建工具gulp。 从css3开始，也重温了一下移动端适配方案，发现其实用媒体查询+px/%比flexible+rem的方案更好。也接触了stylus、sass、less这些预处理器">
+<meta name="keywords" content="Vue.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue笔记（一）">
+<meta property="og:url" content="http://relient.cn/2019/05/25/Vue笔记（一）/index.html">
+<meta property="og:site_name" content="Relient">
+<meta property="og:description" content="最近在公司摸鱼久了，基本上什么前端的东西都接触了一遍。 从原生js开始，到可视化的WebGL、D3、THREE；再到全能的node.js，接触了Express和Koa2，把路由勉强搞清楚；又看了看了工具库Lodash和搭建工具gulp。 从css3开始，也重温了一下移动端适配方案，发现其实用媒体查询+px/%比flexible+rem的方案更好。也接触了stylus、sass、less这些预处理器">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-25T06:07:54.670Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue笔记（一）">
+<meta name="twitter:description" content="最近在公司摸鱼久了，基本上什么前端的东西都接触了一遍。 从原生js开始，到可视化的WebGL、D3、THREE；再到全能的node.js，接触了Express和Koa2，把路由勉强搞清楚；又看了看了工具库Lodash和搭建工具gulp。 从css3开始，也重温了一下移动端适配方案，发现其实用媒体查询+px/%比flexible+rem的方案更好。也接触了stylus、sass、less这些预处理器">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://relient.cn/2019/05/25/Vue笔记（一）/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Vue笔记（一） | Relient</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Relient</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-游戏">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="http://steamcommunity.com/id/catchulater/" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-steam-square"></i> <br>游戏</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-音乐">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="http://cdn.relient.cn/share" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-music"></i> <br>音乐</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://relient.cn/2019/05/25/Vue笔记（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kid Relient">
+      <meta itemprop="description" content="Relient is Always Right">
+      <meta itemprop="image" content="/images/pofile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Relient">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue笔记（一）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-25 09:41:08 / 修改时间：06:07:54" itemprop="dateCreated datePublished" datetime="2019-05-25T09:41:08Z">2019-05-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端技术/" itemprop="url" rel="index"><span itemprop="name">前端技术</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端技术/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近在公司摸鱼久了，基本上什么前端的东西都接触了一遍。</p>
+<p>从原生js开始，到可视化的WebGL、D3、THREE；再到全能的node.js，接触了Express和Koa2，把路由勉强搞清楚；又看了看了工具库Lodash和搭建工具gulp。</p>
+<p>从css3开始，也重温了一下移动端适配方案，发现其实用媒体查询+px/%比flexible+rem的方案更好。也接触了stylus、sass、less这些预处理器，也是把现在的生产工具都摸了一下。</p>
+<p>接下来的计划，就是重新仔细地把Vue给学习一遍，尽量在十五天内完成。今天是五月二十五号，在六月发工资前，要把Vue的基本内容都学会，然后开始动手写一下demo。</p>
+<a id="more"></a>
+<p>那么以下就是第一篇Vue的学习笔记</p>
+<hr>
+<h3 id="一-标签属性"><a href="#一-标签属性" class="headerlink" title="(一)标签属性"></a>(一)标签属性</h3><ul>
+<li><p>v-once 只执行一次 即渲染后就不变</p>
+</li>
+<li><p>is=”一般用作组件”  为了解决<code>&lt;ul&gt;</code>里只能有<code>&lt;li&gt;</code>一类的问题<br>比如<code>&lt;ul&gt;&lt;my-xxx&gt;&lt;/my-xxx&gt;&lt;/ul&gt;</code>就会报错，应改成<code>&lt;li is=&quot;my-xxx&quot;&gt;&lt;/li&gt;</code></p>
+</li>
+<li><p>ref=”类似于id” 用作在this.$refs.xxx里找到dom</p>
+</li>
+<li><p>v-model 双向绑定 <a href="https://www.jianshu.com/p/f194619f6f26" target="_blank" rel="noopener">详细查看</a></p>
+</li>
+<li><p>slot插槽 <a href="#slot">详细查看</a></p>
+</li>
+</ul>
+<hr>
+<h3 id="二-组件传参"><a href="#二-组件传参" class="headerlink" title="(二)组件传参"></a>(二)组件传参</h3><ul>
+<li>父-&gt;子 <div :参数名>    props:[“参数名”]</div></li>
+</ul>
+<ul>
+<li>子-&gt;父 <div @xxx="父组件名"> this.$emit(“xxx”,要传递的参数) </div></li>
+</ul>
+<ul>
+<li><p>兄弟-&gt;兄弟 &amp; 多层传值 </p>
+<p>1.Vuex </p>
+<p>2.bus总线管理 Vue.prototype.bus = new Vue() ==&gt; 调用时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mounted:function()&#123;</span><br><span class="line">let that = this；//作用域发生变化</span><br><span class="line">	this.bus.$on(&apos;xxx&apos;,(res)=&gt;&#123; //监听变化</span><br><span class="line">		that.content = res</span><br><span class="line">	&#125;)	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="三-slot插槽"><a href="#三-slot插槽" class="headerlink" title="(三)slot插槽"></a>(三)slot插槽<div id="slot"></div></h3><ol>
+<li><p>无name：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;demo&gt;</span><br><span class="line">	&lt;p&gt;2&lt;/p&gt;</span><br><span class="line">&lt;/demo&gt;</span><br></pre></td></tr></table></figure>
+<p>组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">demo=&#123; </span><br><span class="line">    template:&quot;&lt;div&gt;</span><br><span class="line">                &lt;p&gt;1&lt;/p&gt;</span><br><span class="line">                &lt;slot&gt;里面也可以写东西&lt;/slot&gt;</span><br><span class="line">              &lt;/div&gt;&quot; </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<p>Vue对象： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">components:&#123;demo &#125;</span><br></pre></td></tr></table></figure>
+<p>生成的DOM:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">里面也可以写东西</span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2.具名插槽：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">demo</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"p1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"p2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">demo</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>组件：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">demo=&#123; </span><br><span class="line">    template:"<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"p1"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"p1"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span>" </span><br><span class="line">          &#125;</span><br></pre></td></tr></table></figure>
+<p>Vue对象：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">components</span>:&#123;<span class="built_in">demo</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>生成的DOM:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>3.作用域插槽 作用在于相同数据不同渲染</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">demo</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"props"</span>&gt;</span> //固定写法 一定要是template和props</span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><span class="template-variable">&#123;&#123; props.value &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span>  //定义渲染方式</span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">demo</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">demo</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"props"</span>&gt;</span> //固定写法 一定要是template和props</span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><span class="template-variable">&#123;&#123; props.value &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span>  //定义渲染方式</span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">demo</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>Vue对象：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">data</span>:&#123;  <span class="attribute">list</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]  &#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">组件：demo=&#123; </span><br><span class="line">template:</span><br><span class="line">       `<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">slot</span> <span class="attr">v-for</span>=<span class="string">"value in list"</span> <span class="attr">:value</span>=<span class="string">value</span>&gt;</span>  //使用slot占位</span><br><span class="line">          <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span>`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>生成的DOM:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>4<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">h1</span>&gt;</span>1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">h1</span>&gt;</span>2<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">h1</span>&gt;</span>3<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">h1</span>&gt;</span>4<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h3 id="四-路由拦截"><a href="#四-路由拦截" class="headerlink" title="(四)路由拦截"></a>(四)路由拦截</h3><p>这块主要是node.js的内容，涉及到router的配置。</p>
+<p>首先在定义路由的时候就需要多添加一个自定义字段requireAuth，用于判断该路由的访问是否需要登录。如果用户已经登录，则顺利进入路由， 否则就进入登录页面。</p>
+<p>具体内容与代码参看<a href="https://www.jianshu.com/p/d7a03fed7a7e" target="_blank" rel="noopener">引用</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/24/blog_set/" rel="next" title="HEXO+NexT博客搭建基础配置">
+                <i class="fa fa-chevron-left"></i> HEXO+NexT博客搭建基础配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/pofile.jpg" alt="Kid Relient">
+            
+              <p class="site-author-name" itemprop="name">Kid Relient</p>
+              <div class="site-description motion-element" itemprop="description">Relient is Always Right</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/RelientS" title="GitHub &rarr; https://github.com/RelientS" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:mzs980722@iCloud.com" title="E-Mail &rarr; mailto:mzs980722@iCloud.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/5018330436/" title="Weibo &rarr; https://weibo.com/5018330436/" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" title="QQ &rarr; http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://steamcommunity.com/id/catchulater/" title="Steam &rarr; http://steamcommunity.com/id/catchulater/" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>Steam</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://www.relient.cn:8099/img01" title="WeChat &rarr; http://www.relient.cn:8099/img01" rel="noopener" target="_blank"><i class="fa fa-fw fa-wechat"></i>WeChat</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-标签属性"><span class="nav-number">1.</span> <span class="nav-text">(一)标签属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-组件传参"><span class="nav-number">2.</span> <span class="nav-text">(二)组件传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-slot插槽"><span class="nav-number">3.</span> <span class="nav-text">(三)slot插槽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-路由拦截"><span class="nav-number">4.</span> <span class="nav-text">(四)路由拦截</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kid Relient</span>
+
+  
+
+  
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共3.1k字</span>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="53,53,53" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
