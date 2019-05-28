@@ -1126,7 +1126,7 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Satifaction', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1768,7 +1768,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #88feff;
+  background: #5c2eff;
 }
 .feed-link,
 .chat {
@@ -2712,6 +2712,11 @@ hr {
     text-align: center;
   }
 }
+@font-face {
+  font-family: 'Satifaction';
+  src: url("/fonts/font.ttf");
+  font-weight: 300;
+}
 blockquote {
   border-left: 4px solid #42b983;
   padding: 10px 15px 10px 15px;
@@ -2729,4 +2734,12 @@ table {
 a:hover {
   color: #ffa500;
   transition: color 1s;
+}
+.logo-line-before,
+.logo-line-after {
+  display: none;
+}
+.site-meta .site-title {
+  font-size: 34px;
+  margin-top: 10px;
 }
