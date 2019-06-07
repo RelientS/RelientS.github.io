@@ -135,18 +135,20 @@
 
 
 
-  <meta name="description" content="这周末搞定了手头上的一大部分事情，可以继续学习Vue了。 今晚就来学习一下Vue的实例方法。">
-<meta name="keywords" content="Vue.js">
+  <meta name="description" content="要开始被问简历了，赶紧先把自己挖的坑补一补。演练一下，有可能在哪些地方被提问。">
+<meta name="keywords" content="学习,面经">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue笔记（四）">
-<meta property="og:url" content="http://relient.cn/2019/06/03/Vue笔记（四）/index.html">
+<meta property="og:title" content="为简历项目填坑">
+<meta property="og:url" content="http://relient.cn/2019/06/08/为简历项目填坑/index.html">
 <meta property="og:site_name" content="Relient">
-<meta property="og:description" content="这周末搞定了手头上的一大部分事情，可以继续学习Vue了。 今晚就来学习一下Vue的实例方法。">
+<meta property="og:description" content="要开始被问简历了，赶紧先把自己挖的坑补一补。演练一下，有可能在哪些地方被提问。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-06T10:12:38.200Z">
+<meta property="og:image" content="http://ps3cb2z1y.bkt.clouddn.com/svgVScanvas.jpg">
+<meta property="og:updated_time" content="2019-06-07T08:31:09.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue笔记（四）">
-<meta name="twitter:description" content="这周末搞定了手头上的一大部分事情，可以继续学习Vue了。 今晚就来学习一下Vue的实例方法。">
+<meta name="twitter:title" content="为简历项目填坑">
+<meta name="twitter:description" content="要开始被问简历了，赶紧先把自己挖的坑补一补。演练一下，有可能在哪些地方被提问。">
+<meta name="twitter:image" content="http://ps3cb2z1y.bkt.clouddn.com/svgVScanvas.jpg">
 
 
 
@@ -154,7 +156,7 @@
 
   
   
-  <link rel="canonical" href="http://relient.cn/2019/06/03/Vue笔记（四）/">
+  <link rel="canonical" href="http://relient.cn/2019/06/08/为简历项目填坑/">
 
 
 
@@ -164,7 +166,7 @@
   };
 </script>
 
-  <title>Vue笔记（四） | Relient</title>
+  <title>为简历项目填坑 | Relient</title>
   
 
 
@@ -414,7 +416,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://relient.cn/2019/06/03/Vue笔记（四）/">
+    <link itemprop="mainEntityOfPage" href="http://relient.cn/2019/06/08/为简历项目填坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kid Relient">
@@ -431,7 +433,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue笔记（四）
+          <h1 class="post-title" itemprop="name headline">为简历项目填坑
 
               
             
@@ -457,7 +459,7 @@
                 
               
 
-              <time title="创建时间：2019-06-02 23:41:08" itemprop="dateCreated datePublished" datetime="2019-06-02T23:41:08Z">2019-06-02</time>
+              <time title="创建时间：2019-06-08 05:08:00" itemprop="dateCreated datePublished" datetime="2019-06-08T05:08:00Z">2019-06-08</time>
             
 
             
@@ -474,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-06 10:12:38" itemprop="dateModified" datetime="2019-06-06T10:12:38Z">2019-06-06</time>
+                <time title="修改时间：2019-06-07 08:31:09" itemprop="dateModified" datetime="2019-06-07T08:31:09Z">2019-06-07</time>
               
             
           </span>
@@ -498,7 +500,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端技术/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端技术/面经/" itemprop="url" rel="index"><span itemprop="name">面经</span></a></span>
 
                 
                 
@@ -533,49 +535,73 @@
       
 
       
-        <p>这周末搞定了手头上的一大部分事情，可以继续学习Vue了。</p>
-<p>今晚就来学习一下Vue的实例方法。</p>
+        <p>要开始被问简历了，赶紧先把自己挖的坑补一补。演练一下，有可能在哪些地方被提问。</p>
 <a id="more"></a>
-<h3 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h3><p>当new Vue()时，就会创建一个新的Vue实例。如<code>var vm = new Vue({....})</code>,那么vm就是一个新建的Vue实例，那么实例上就可以通过原型链找到挂载在原型上的方法。一般名为vm.$xxx()。</p>
-<hr>
-<h3 id="实例属性"><a href="#实例属性" class="headerlink" title="实例属性"></a>实例属性</h3><ul>
-<li>$el 用于获取Vue实例使用的根DOM元素,即el选项所指的元素DOM</li>
-<li>$data 实例观察的数据对象。Vue实例代理了对其data对象属性的访问。</li>
-<li>$options 用于当前 Vue 实例的初始化选项。可以调用构造器参数里与data同级的属性和方法。</li>
-<li>$refs 返回有ref特性的所有DOM元素和组件实例，该类型为Object，且只读。多用于获取节点。</li>
-<li>$root 当前组件树的根实例。</li>
+<h2 id="简历涉及的技术点"><a href="#简历涉及的技术点" class="headerlink" title="简历涉及的技术点"></a>简历涉及的技术点</h2><ul>
+<li><a href="#Vue">Vue</a></li>
+<li><a href="#Node">Node（express、koa、koa2）</a></li>
+<li><a href="#KSH">可视化 （ECharts、D3）</a></li>
+<li><a href="#Webpack">Webpack</a></li>
+<li><a href="#Git">Git</a></li>
+<li><a href="#Mini">小程序</a></li>
 </ul>
-<hr>
-<h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><ul>
-<li>扩展方法<ul>
-<li>$mounted()  用来挂载扩展</li>
-<li>$destroy()  用来卸载扩展</li>
-</ul>
+<h2 id="可能会被问到的问题"><a href="#可能会被问到的问题" class="headerlink" title="可能会被问到的问题"></a>可能会被问到的问题</h2><h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a><div id="Vue">Vue</div></h3><ul>
+<li><p><a href="https://cn.vuejs.org/v2/guide/instance.html#%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90" target="_blank" rel="noopener">生命周期</a>和<a href="http://relient.cn/2019/05/30/Vue%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">钩子函数</a></p>
 </li>
-<li>监听方法<ul>
-<li>$watch(expOrFn, callback, [options]) 观察Vue实例变化中的一个表达式或计算属性函数。监视某个属性，如果被更该，将执行回调函数。第一个参数为表达式或计算属性函数，也可以是一个属性。</li>
-</ul>
+<li><p>Vue的双向绑定原理（手撕）</p>
 </li>
-<li>属性方法<ul>
-<li>$set(target, key, value) 设置对象的属性。</li>
-<li>$delete( target, key ) 删除对象的属性。</li>
-</ul>
+<li><p>Vue和React的区别</p>
 </li>
-<li>事件方法<ul>
-<li>$on( event, callback ) 监听当前实例上的自定义事件。事件可以由vm.$emit触发。回调函数会接收所有传入事件触发函数的额外参数。</li>
-<li>$emit( event, […args] ) 触发当前实例上的事件。附加参数都会传给监听器回调。</li>
-<li>$once( event, callback ) 监听一个自定义事件，但是只触发一次，在第一次触发之后移除监听器</li>
-<li>$off( [event, callback] ) 移除自定义事件监听器。如果没有提供参数，则移除所有的事件监听器；如果只提供了事件，则移除该事件所有的监听器；如果同时提供了事件与回调，则只移除这个回调的监听器。</li>
-</ul>
+<li><p><a href="https://www.jb51.net/article/139123.htm" target="_blank" rel="noopener">Vue.nextTick()</a>以及事件队列</p>
 </li>
-<li>生命周期方法<ul>
-<li>$forceUpdate() 迫使 Vue 实例重新渲染。</li>
-<li>$nextTick( [callback] )将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。在DOM更新完成后再执行回调函数，一般在修改数据之后使用该方法，以便获取更新后的DOM。</li>
-</ul>
+<li><p>router原理</p>
 </li>
 </ul>
-<hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>要多使用实例属性和方法。</p>
+<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><div id="Node">Node.js</div></h3><ul>
+<li><p><a href="https://blog.csdn.net/shmnh/article/details/53577098" target="_blank" rel="noopener">express、koa和koa2的区别</a></p>
+<ul>
+<li>总言之，最主要的区别还是异步流程控制，<code>express</code>是通过callback（导致回调地狱），<code>Koa</code>采用es6的generator，<code>Koa2</code>通过es7的async/await方法。</li>
+<li>此外，koa还移除了router、view等功能，通过co函数将异步变同步执行。</li>
+</ul>
+</li>
+<li><p><a href="https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/" target="_blank" rel="noopener">Eventloop</a>以及<a href="https://www.cnblogs.com/jasonxuli/p/6074231.html" target="_blank" rel="noopener">process.nextTick()</a></p>
+</li>
+</ul>
+<h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a><div id="KSH">可视化</div></h3><ul>
+<li><p>D3.js和echarts性能对比（即svg与canvas对比）</p>
+<p><img src="http://ps3cb2z1y.bkt.clouddn.com/svgVScanvas.jpg" alt="svgVScanvas"></p>
+</li>
+</ul>
+<h3 id="Webpack（不用太深入）"><a href="#Webpack（不用太深入）" class="headerlink" title="Webpack（不用太深入）"></a><div id="Webpack">Webpack（不用太深入）</div></h3><ul>
+<li><p>webpack的<code>loader</code>和<code>plugin</code>区别</p>
+<ul>
+<li>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时预处理文件。</li>
+<li>Plugin 是用来扩展 Webpack 功能的，通过在构建流程里注入钩子实现，它给 Webpack 带来了很大的灵活性。</li>
+</ul>
+</li>
+<li><p>webpack的作用</p>
+<ul>
+<li>WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。</li>
+</ul>
+</li>
+</ul>
+<h3 id="小程序（略）"><a href="#小程序（略）" class="headerlink" title="小程序（略）"></a><div id="Mini">小程序（略）</div></h3><ul>
+<li>小程序和H5的区别<ul>
+<li>运行环境</li>
+<li>开发成本</li>
+<li>系统权限</li>
+<li>流畅度</li>
+</ul>
+</li>
+</ul>
+<h3 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h3><ul>
+<li><a href="https://www.cnblogs.com/tjyoung/p/8976013.html" target="_blank" rel="noopener">传送门1</a></li>
+<li><a href="https://www.cnblogs.com/fengyuqing/p/functional_programming_1.html" target="_blank" rel="noopener">传送门2</a></li>
+</ul>
+<h3 id="最后最重要的还是"><a href="#最后最重要的还是" class="headerlink" title="最后最重要的还是"></a>最后最重要的还是</h3><ul>
+<li><a href="https://www.nowcoder.com/ta/coding-interviews?query=&amp;asc=true&amp;order=&amp;page=1" target="_blank" rel="noopener">算法</a>orz</li>
+<li><a href="http://www.bslxx.com/a/mianshiti/tiku/2019/0316/2217.html" target="_blank" rel="noopener">整体总结</a></li>
+</ul>
 
       
     </div>
@@ -599,7 +625,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+            <a href="/tags/面经/" rel="tag"># 面经</a>
           
         </div>
       
@@ -612,8 +640,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/02/关于学习的一些思考/" rel="next" title="关于学习的一些思考">
-                <i class="fa fa-chevron-left"></i> 关于学习的一些思考
+              <a href="/2019/06/07/字节跳动面经/" rel="next" title="字节跳动面经">
+                <i class="fa fa-chevron-left"></i> 字节跳动面经
               </a>
             
           </div>
@@ -621,10 +649,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/07/字节跳动面经/" rel="prev" title="字节跳动面经">
-                字节跳动面经 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -867,7 +891,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建实例"><span class="nav-number">1.</span> <span class="nav-text">创建实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例属性"><span class="nav-number">2.</span> <span class="nav-text">实例属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例方法"><span class="nav-number">3.</span> <span class="nav-text">实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简历涉及的技术点"><span class="nav-number">1.</span> <span class="nav-text">简历涉及的技术点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可能会被问到的问题"><span class="nav-number">2.</span> <span class="nav-text">可能会被问到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue"><span class="nav-number">2.1.</span> <span class="nav-text">Vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可视化"><span class="nav-number">2.3.</span> <span class="nav-text">可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack（不用太深入）"><span class="nav-number">2.4.</span> <span class="nav-text">Webpack（不用太深入）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序（略）"><span class="nav-number">2.5.</span> <span class="nav-text">小程序（略）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式编程"><span class="nav-number">2.6.</span> <span class="nav-text">函数式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后最重要的还是"><span class="nav-number">2.7.</span> <span class="nav-text">最后最重要的还是</span></a></li></ol></li></ol></div>
             
 
           </div>
