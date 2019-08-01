@@ -143,7 +143,7 @@
 <meta property="og:description" content="这几天在重庆生产实习，每天闲得和一只咸鱼一样。觉得还是不能天天躺尸，趁着有时间应该多学点东西，不然去上班会被leader狂批。说到上班，我就想起了当年JD上写的，“需要掌握React等开发框架”。well，那就学呗。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://bucket.relient.cn/react-app.png">
-<meta property="og:updated_time" content="2019-07-12T16:15:40.268Z">
+<meta property="og:updated_time" content="2019-08-01T17:16:25.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React笔记（一）">
 <meta name="twitter:description" content="这几天在重庆生产实习，每天闲得和一只咸鱼一样。觉得还是不能天天躺尸，趁着有时间应该多学点东西，不然去上班会被leader狂批。说到上班，我就想起了当年JD上写的，“需要掌握React等开发框架”。well，那就学呗。">
@@ -475,7 +475,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-12 16:15:40" itemprop="dateModified" datetime="2019-07-12T16:15:40Z">2019-07-12</time>
+                <time title="修改时间：2019-08-01 17:16:25" itemprop="dateModified" datetime="2019-08-01T17:16:25Z">2019-08-01</time>
               
             
           </span>
@@ -547,7 +547,7 @@
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br></pre></td></tr></table></figure>
 <p>就会得到以下的项目结构。</p>
 <p><img src="http://bucket.relient.cn/react-app.png" alt="react-app"></p>
-<p>输入<figure class="highlight plain"><figcaption><span>start``` 即可运行项目。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### React特性</span><br><span class="line"></span><br><span class="line">1. 当然是既可爱又可恨的JSX了。</span><br><span class="line"></span><br><span class="line">	那么，什么是JSX呢。  通俗点讲，就是在js中写html的东西。比如说```const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;```就是一个典型的JSX语句。</span><br><span class="line">    </span><br><span class="line">2. 组件（构造函数组件和class组件）</span><br><span class="line"></span><br><span class="line">	官网解释：“组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 props），并返回用于描述页面展示内容的 React 元素。”</span><br><span class="line">	</span><br><span class="line">    React的class组件通过继承自React.Component的类实现，写法如下：</span><br><span class="line">    </span><br><span class="line">    ```JavaScript</span><br><span class="line">    class Square extends React.Component &#123;</span><br><span class="line">      constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">          value: null,</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      render() &#123;</span><br><span class="line">        return (</span><br><span class="line">          &lt;button</span><br><span class="line">            className=&quot;square&quot;</span><br><span class="line">            onClick=&#123;() =&gt; this.setState(&#123;value: &apos;X&apos;&#125;)&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            &#123;this.state.value&#125;</span><br><span class="line">          &lt;/button&gt;</span><br><span class="line">        );</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>输入 <figure class="highlight plain"><figcaption><span>start``` 即可运行项目。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### React特性</span><br><span class="line"></span><br><span class="line">1. 当然是既可爱又可恨的JSX了。</span><br><span class="line"></span><br><span class="line">	那么，什么是JSX呢。  通俗点讲，就是在js中写html的东西。比如说```const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;```就是一个典型的JSX语句。</span><br><span class="line">    </span><br><span class="line">2. 组件（构造函数组件和class组件）</span><br><span class="line"></span><br><span class="line">	官网解释：“组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 props），并返回用于描述页面展示内容的 React 元素。”</span><br><span class="line">	</span><br><span class="line">    React的class组件通过继承自React.Component的类实现，写法如下：</span><br><span class="line">    </span><br><span class="line">    ```JavaScript</span><br><span class="line">    class Square extends React.Component &#123;</span><br><span class="line">      constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">          value: null,</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      render() &#123;</span><br><span class="line">        return (</span><br><span class="line">          &lt;button</span><br><span class="line">            className=&quot;square&quot;</span><br><span class="line">            onClick=&#123;() =&gt; this.setState(&#123;value: &apos;X&apos;&#125;)&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            &#123;this.state.value&#125;</span><br><span class="line">          &lt;/button&gt;</span><br><span class="line">        );</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
 <ol start="3">
 <li><p>Props</p>
 <p> 用作组件之间传参。且其具有<strong>只读</strong>性，决不能修改自身的props。使用方式：</p>
@@ -604,6 +604,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/02/阿里面经/" rel="prev" title="阿里面经">
+                阿里面经 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -674,7 +678,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -881,7 +885,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.4k字</span>
+  <span class="post-count">博客全站共11.3k字</span>
 </div>
 </div>
 
